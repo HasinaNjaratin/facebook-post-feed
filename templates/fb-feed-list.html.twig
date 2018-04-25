@@ -1,0 +1,26 @@
+{#
+
+/**
+ * @file
+ * Template file for facebook_post_feed module.
+ */
+#}
+
+<div class="article-content-right">
+  <h1 class="heading heading-bordered heading-bordered-30 heading-bordered-bluenavy">Facebook News</h1>
+  <div class="article-section" data-slick="{&quot;arrows&quot;:false,&quot;vertical&quot;:true,&quot;slidesToShow&quot;:2,&quot;autoplaySpeed&quot;: 2000,&quot;infinite&quot;: true,&quot;pauseOnHover&quot;: true}" style="display:block; width: 100%;">
+    {% for post in posts.feed %}
+      <div class="card-tahiti">
+        <div class="card-image-content d-flex flex-row">
+          <div class="card-image" style = "background-image: url(&quot;{{ post.picture }}&quot;);background-repeat: no-repeat; background-position: center;">
+          </div>
+          <div class="card-content d-flex flex-column justify-content-between">
+            <span class="card-title"><a class="fb-link" href="{{ posts.link }}">#{{ posts.name }}</a></span>
+            <p>{{ post.message }}</p>
+            <span>{{ post.created_time }}</span>
+          </div>
+        </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<?php
+
+ /**
+  * Implements hook_theme().
+  */
+ function facebook_post_feed_theme() {
+   return [
+     'facebook_post_feed_list' => [
+       'template' => 'fb-feed-list',
+       'variables' => [
+         'posts' => ['name' => '', 'link' => '', 'feed' => []],
+       ],
+     ],
+   ];
+ }
